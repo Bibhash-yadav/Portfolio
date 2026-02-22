@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> -->
+    <script src="https://kit.fontawesome.com/e4c8e2ee92.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="images/fevicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav class="navbar">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="logo">Portfolio</div>
+
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills & Technologies</a>
+                <a href="#education">Education</a>
+                <a href="#projects">Projects</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#stats">Achievements & Certificates</a>
+                <a href="#services">Services</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="theme-controls">
+                <div class="color-menu">
+                    <button class="color-menu-toggle" id="colorMenuToggle" aria-label="Toggle color menu"
+                        title="Color Theme">
+                        <i class="fas fa-palette"></i>
+                    </button>
+                    <div class="color-options" id="colorOptions">
+                        <button class="color-option" data-color="blue" title="Blue" style="--color: #2563eb;"></button>
+                        <button class="color-option" data-color="purple" title="Purple"
+                            style="--color: #9333ea;"></button>
+                        <button class="color-option" data-color="green" title="Green"
+                            style="--color: #16a34a;"></button>
+                        <button class="color-option" data-color="red" title="Red" style="--color: #dc2626;"></button>
+                        <button class="color-option" data-color="orange" title="Orange"
+                            style="--color: #ea580c;"></button>
+                        <button class="color-option" data-color="pink" title="Pink" style="--color: #ec4899;"></button>
+                    </div>
+                </div>
+                <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+
+        </nav>
+    </header>
+
+
+    <div class="menu-overlay"></div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Hi, I'm <span class="highlight" id="msg"></span></h1>
+                <h2></h2>
+                <p></p>
+                 <div class="social-links">
+                    <a href="https://www.linkedin.com/in/bibhash-yadav-12086032a?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                        target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Bibhash-yadav" target="_blank" title="GitHub"><i
+                            class="fab fa-github"></i></a>
+                    <a href="mailto:yadavbibhash304059@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+                <a href="#contact" class="cta-button">Get In Touch</a>
+            </div>
+            <div class="hero-image">
+                <div class="image-wrapper">
+                    <div class="image-bg-circle"></div>
+                    <div class="shine-effect"></div>
+                    <div class="glow-effect"></div>
+                    <img src="images/bibhash.png" alt="Profile Picture" class="profile-img">
+                    <div class="image-border"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Stat Details Modal -->
+    <div id="statModal" class="modal" aria-hidden="true">
+        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalLabel">
+            <button class="modal-close" id="statModalClose" aria-label="Close">&times;</button>
+            <h3 id="modalLabel">Title</h3>
+            <div class="modal-number" id="modalNumber">0</div>
+            <p id="modalDetail">Detail text</p>
+        </div>
+    </div>
+
+    <!-- Templates for modal content -->
+    <template id="projectsTemplate">
+        <div class="projects-list">
+            <ul>
+                <li>
+                    <h4>DT-1 Goverment Hospital</h4>
+                    <p>This project studies government hospital functioning in India—analyzing infrastructure,
+                        efficiency, stakeholder roles, and proposing tech-driven improvements.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/Bibhash-yadav/" class="project-link"><i class="fab fa-github"></i>
+                            GitHub</a>
+                        <a href="https://dt-by-bibhash-yadav.netlify.app/" class="project-link"><i
+                                class="fas fa-external-link-alt"></i> Live Demo</a>
+                    </div>
+                </li>
+                <li>
+                    <h4>DT-2 Unhygienic Taps</h4>
+                    <p>Investigation and solution proposals to reduce contamination in public taps, improving hygiene
+                        through design and lightweight tech interventions.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/Bibhash-yadav/" class="project-link"><i class="fab fa-github"></i>
+                            GitHub</a>
+                        <a href="https://dt2-by-bibhash-yadav.netlify.app/" class="project-link"><i
+                                class="fas fa-external-link-alt"></i> Live Demo</a>
+                    </div>
+                </li>
+                <li>
+                    <h4>Library Management System</h4>
+                    <p>Library Management System Website is an online platform where students and admin can manage
+                        library activities digitally — users can search books, check availability, issue/return books,
+                        and track due dates, while the admin manages book records and fines, making the library process
+                        faster and paperless.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/Bibhash-yadav/" class="project-link"><i class="fab fa-github"></i>
+                            GitHub</a>
+                        <a href="https://library-management-system-se.netlify.app/" class="project-link"><i
+                                class="fas fa-external-link-alt"></i> Live Demo</a>
+                    </div>
+                </li>
+                <li>
+                    <h4>Watch</h4>
+                    <p>Watch Website is an e-commerce website developed to display and sell various watches online,
+                        allowing users to view products, check details, and purchase easily through a simple and
+                        user-friendly interface.</p>
+
+                    <div class="project-links">
+                        <a href="https://github.com/Bibhash-yadav/" class="project-link"><i class="fab fa-github"></i>
+                            GitHub</a>
+                        <a href="https://watch-bibhash.netlify.app/" class="project-link"><i
+                                class="fas fa-external-link-alt"></i> Live Demo</a>
+                    </div>
+                </li>
+                <li>
+                    <h4>AB codes – Website Source Code Sharing Platform</h4>
+                    <p>AB codes is a web platform where users can explore and download ready-made website source codes
+                        to learn and build their own projects easily. It provides organized code examples, project
+                        previews, and learning resources for students and beginners.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/Bibhash-yadav/" class="project-link"><i class="fab fa-github"></i>
+                            GitHub</a>
+                        <a href="https://abcodes.netlify.app/" class="project-link"><i
+                                class="fas fa-external-link-alt"></i> Live Demo</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </template>
+
+    <template id="clientsTemplate">
+        <div class="clients-reviews">
+            <ul>
+                <li>
+                    <p>"Bibhash is an exceptional developer with great attention to detail. His work on our project was
+                        outstanding and he delivered on time."</p>
+                    <p><strong>— Chiran Rawat</strong>, Project Manager</p>
+                </li>
+                <li>
+                    <p>"Working with Bibhash was a pleasure. He's knowledgeable, communicative, and truly cares about
+                        the quality of his work."</p>
+                    <p><strong>— Chetan</strong>, Business Owner</p>
+                </li>
+                <li>
+                    <p>"Highly recommended! Bibhash has impressive technical skills and delivers excellent results. A
+                        true professional."</p>
+                    <p><strong>— Nitesh</strong>, Tech Lead</p>
+                </li>
+                <li>
+                       <div class="project-links">
+                    <a href="#testimonials" class="project-link"><i
+                            class="fas fa-external-link-alt"></i> More info</a>
+                       </div>
+                </li>
+            </ul>
+        </div>
+         <div class="testimonials-grid" id="testimonialsGrid">  </div>
+    </template>
+
+
+    <section id="about" class="about">
+        <h2 class="section-title">About Me</h2>
+
+        <div class="about-container">
+
+            <!-- LEFT IMAGE -->
+            <div class="about-image">
+                <img src="images/bibhash.png" alt="Profile Photo">
+            </div>
+
+            <!-- RIGHT CONTENT -->
+            <div class="about-content">
+
+                <p class="about-desc">
+                    I am a Computer Science student and passionate web developer who enjoys building clean,
+                    user-friendly and real-world applications. I mainly work with HTML, CSS, JavaScript and Python, and
+                    I love turning ideas into functional websites and systems.
+
+                    I have developed projects like a Library Management System and multiple responsive websites which
+                    improved my problem-solving and logical thinking skills. I continuously learn new technologies and
+                    focus on writing simple, efficient and maintainable code.
+
+                    Currently, I am looking for opportunities to gain practical experience, contribute to real projects
+                    and grow as a software developer.
+
+                </p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/bibhash-yadav-12086032a?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                        target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Bibhash-yadav" target="_blank" title="GitHub"><i
+                            class="fab fa-github"></i></a>
+                    <a href="https://x.com/YadavBibhash1" target="_blank" title="Twitter / X"><i
+                            class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=100057226334759" target="_blank"
+                        title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/bibhash.yadav.ab/" target="_blank" title="Instagram"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.me/+918603500504" target="_blank" title="WhatsApp"><i
+                            class="fa-brands fa-whatsapp"></i></a>
+                    <a href="mailto:yadavbibhash304059@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+
+                <div class="personal-info">
+                    <div class="info-item">
+                        <i class="fas fa-calendar"></i>
+                        <span><b>DOB:</b> january 13, 2005</span>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span><b>Location:</b> Janakpurdham, Nepal</span>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <span><b>Email:</b> yadavbibhash304059@gmail.com</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+ <section id="skills" class="skills">
+    <h2 class="section-title">Skills</h2>
+
+    <div class="skills-content">
+
+        <!-- HARD SKILLS -->
+        <div class="skill-category">
+            <h3>Technical Skills</h3>
+            <div class="skill-items">
+
+                <div class="skill-item">
+                    <span>HTML5</span>
+                    <div class="progress-bar"><div class="progress" style="width:95%"></div></div>
+                </div>
+
+                <div class="skill-item">
+                    <span>CSS3</span>
+                    <div class="progress-bar"><div class="progress" style="width:85%"></div></div>
+                </div>
+
+                <div class="skill-item">
+                    <span>JavaScript</span>
+                    <div class="progress-bar"><div class="progress" style="width:40%"></div></div>
+                </div>
+
+                <div class="skill-item">
+                    <span>C Programming</span>
+                    <div class="progress-bar"><div class="progress" style="width:50%"></div></div>
+                </div>
+
+                <div class="skill-item">
+                    <span>Python</span>
+                    <div class="progress-bar"><div class="progress" style="width:55%"></div></div>
+                </div>
+
+                <div class="skill-item">
+                    <span>Software Testing</span>
+                    <div class="progress-bar"><div class="progress" style="width:50%"></div></div>
+                </div>
+
+                <div class="skill-item">
+                    <span>Git & GitHub</span>
+                    <div class="progress-bar"><div class="progress" style="width:25%"></div></div>
+                </div>
+
+                <div class="skill-item">
+                    <span>React</span>
+                    <div class="progress-bar"><div class="progress" style="width:25%"></div></div>
+                </div>
+
+                <div class="skill-item">
+                    <span>Typescript</span>
+                    <div class="progress-bar"><div class="progress" style="width:25%"></div></div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- SOFT SKILLS -->
+        <div class="skill-category">
+            <h3>Professional Skills</h3>
+            <div class="skill-items">
+
+                <div class="skill-item">
+                    <span>Problem Solving</span>
+                    <div class="progress-bar"><div class="progress" style="width:85%"></div></div>
+                </div>
+
+                <div class="skill-item">
+                    <span>Communication</span>
+                    <div class="progress-bar"><div class="progress" style="width:80%"></div></div>
+                </div>
+
+                <div class="skill-item">
+                    <span>Teamwork</span>
+                    <div class="progress-bar"><div class="progress" style="width:85%"></div></div>
+                </div>
+
+                <div class="skill-item">
+                    <span>Time Management</span>
+                    <div class="progress-bar"><div class="progress" style="width:75%"></div></div>
+                </div>
+
+                <div class="skill-item">
+                    <span>Adaptability</span>
+                    <div class="progress-bar"><div class="progress" style="width:78%"></div></div>
+                </div>
+
+                <div class="skill-item">
+                    <span>Quick Learner</span>
+                    <div class="progress-bar"><div class="progress" style="width:88%"></div></div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+    <!-- Technologies section -->
+    <section class="tech-section">
+
+        <h2 class="title section-title">Technologies I Use</h2>
+
+        <div class="tech-area" id="techArea">
+            <div class="tech"><i class="fab fa-html5"></i></div>
+            <div class="tech"><i class="fab fa-css3-alt"></i></div>
+            <div class="tech"><i class="fab fa-js"></i></div>
+            <div class="tech"><i class="fab fa-python"></i></div>
+            <div class="tech"><i class="fas fa-code"></i></div>
+            <div class="tech"><i class="fas fa-laptop-code"></i></div>
+            <div class="tech"><i class="fab fa-github"></i></div>
+            <div class="tech"><i class="fab fa-react"></i></div>
+        </div>
+
+    </section>
+
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <h2 class="section-title">Education</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>B.Tech in Computer Science</h3>
+                    <h4>CMR University</h4>
+                    <p>2024 - Continue</p>
+                    <p></p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Higher Secondary</h3>
+                    <h4>Shree Yagyavalkya Sanskrit Secondary School Gyankoop Janakpurdham-07 Nepal</h4>
+                    <p>2022-2024</p>
+                </div>
+
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+
+                    <h3>Matric</h3>
+                    <h4>Shree Rajeshwar Nidhi secondary school Nagarain-01 Nepal</h4>
+                    <p>2020-2022</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="images/dt-1.png" alt="Project 1">
+                <h3>Title = Goverment Hospital</h3>
+                <p><b> Project Description: </b> <br>
+                    This project aims to study the functioning of government hospitals in India, analyzing their
+                    infrastructure, efficiency, and the role of technology in healthcare delivery. The focus is on
+                    understanding stakeholder involvement, challenges faced by these hospitals, and proposing
+                    improvements using modern technology and design thinking approaches.</p>
+                <div class="project-links">
+                    <a href="https://github.com/Bibhash-yadav/" class="project-link"><i class="fab fa-github"></i>
+                        GitHub</a>
+                    <a href="https://dt-by-bibhash-yadav.netlify.app/" class="project-link"><i
+                            class="fas fa-external-link-alt"></i> Live Demo</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="images/project2.png" alt="Project 2">
+                <h3>Title = Problem Related To
+                    Unhygienic Taps
+                </h3>
+                <p><b> Project Description: </b> <br>
+                    This project focuses on identifying and addressing the issue of unhygienic taps in public places. It
+                    explores the causes of contamination, proposes solutions for improving hygiene standards, and
+                    suggests ways to maintain clean and safe water access for all users.</p>
+                <div class="project-links">
+                    <a href="https://github.com/Bibhash-yadav/" class="project-link"><i class="fab fa-github"></i>
+                        GitHub</a>
+                    <a href="https://dt2-by-bibhash-yadav.netlify.app/" class="project-link"><i
+                            class="fas fa-external-link-alt"></i> Live Demo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <h2 class="section-title">My Work Gallery</h2>
+        <p class="gallery-subtitle">
+            Some screenshots of projects and interfaces I have designed and developed.
+        </p>
+
+        <div class="gallery-container">
+
+            <div class="gallery-item">
+                <img src="images/portfolio.jpeg" alt="Portfolio Website">
+                <div class="gallery-info">
+                    <span class="tag">Website</span>
+                    <h4>Personal Portfolio</h4>
+                    <p>Responsive portfolio built using HTML, CSS & JavaScript.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/lms.png" alt="Library System">
+                <div class="gallery-info">
+                    <span class="tag">Project</span>
+                    <h4>Library Management System</h4>
+                    <p>Book issuing and return management interface.</p>
+                    <a href="https://library-management-system-se.netlify.app/" class="project-link"><i
+                            class="fas fa-external-link-alt"></i> Live Demo</a>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/ui.png" alt="UI Design">
+                <div class="gallery-info">
+                    <span class="tag">UI Design</span>
+                    <h4>Dashboard UI</h4>
+                    <p>Clean dashboard layout and responsive components.</p>
+                    <a href="https://www.figma.com/design/aLzvmaWnWZ3ZGwllp5ViRd/APP?t=ijVxcjb5tPVgkizZ-0"
+                        class="project-link"><i class="fas fa-external-link-alt"></i>For more details</a>
+
+                </div>
+            </div>
+
+            <!-- <div class="gallery-item">
+                <img src="images/html.png" alt="Certificate">
+                <div class="gallery-info">
+                    <span class="tag">Certificate</span>
+                    <h4>HTML Essentials – Cisco Networking Academy</h4>
+                    <p>Successfully completed the HTML Essentials course, learning the fundamentals of web page structure, tags,
+                        forms, links, and semantic elements.</p>
+                </div>
+            </div> -->
+
+        </div>
+    </section>
+
+    <!-- POPUP -->
+    <div class="image-preview" id="imagePreview">
+        <span class="close-btn">&times;</span>
+        <img id="previewImg">
+    </div>
+
+
+    <!-- Statistics Section -->
+    <section id="stats" class="stats">
+        <h2 class="section-title">My Achievements</h2>
+        <p
+            style="text-align: center; font-size: 1.1rem; margin-bottom: 3rem; color: var(--light-text); max-width: 600px; margin-left: auto; margin-right: auto;">
+            Track record of successful projects and satisfied clients across diverse domains. Dedicated to excellence
+            and continuous improvement.
+        </p>
+        <div class="stats-container">
+            <div class="stat-card" data-type="projects"
+                data-detail="Built and delivered 15 projects including websites, small apps, and prototypes.">
+                <div class="stat-number" data-target="15">0</div>
+                <div class="stat-label">Projects Completed</div>
+            </div>
+            <div class="stat-card" data-type="clients"
+                data-detail="Collaborated with 50+ clients and stakeholders to deliver quality results and maintain long-term relationships.">
+                <div class="stat-number" data-target="50">0</div>
+                <div class="stat-label">Happy Clients</div>
+                
+            </div>
+            <div class="stat-card"
+                data-detail="3 years of hands-on experience working on academic and freelance projects focused on web development.">
+                <div class="stat-number" data-target="3">0</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-card"
+                data-detail="Accumulated 100+ productive coding hours across projects, debugging, and learning new tools and frameworks.">
+                <div class="stat-number" data-target="100">0</div>
+                <div class="stat-label">Code Hours</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certificates" class="certificates">
+        <h2 class="section-title">Certificates</h2>
+
+        <div class="certificate-container">
+
+            <!-- Certificate 1 -->
+            <div class="certificate-card">
+                <img src="images/python.png" alt="Python Certificate">
+                <div class="certificate-info">
+                    <h3>Python Programming</h3>
+                    <p>Completed Python fundamentals and problem solving concepts.</p>
+                    <button class="view-btn">View Certificate</button>
+                </div>
+            </div>
+
+            <!-- Certificate 2 -->
+            <div class="certificate-card">
+                <img src="images/html.png" alt="Web Development Certificate">
+                <div class="certificate-info">
+                    <h3>Web Development</h3>
+                    <p>HTML, CSS & JavaScript responsive website development.</p>
+                    <button class="view-btn">View Certificate</button>
+                </div>
+            </div>
+
+            <!-- Certificate 3 -->
+            <div class="certificate-card">
+                <img src="images/software.png" alt="Software Testing Certificate">
+                <div class="certificate-info">
+                    <h3>Introduction to Software Testing</h3>
+                    <p>Learned testing fundamentals, test cases, debugging, and quality assurance concepts.</p>
+                    <button class="view-btn">View Certificate</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CERTIFICATE MODAL -->
+    <div class="cert-modal" id="certModal">
+        <span class="cert-close">&times;</span>
+        <img id="certPreview">
+    </div>
+
+
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2 class="section-title">Services I Offer</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3>Web Development</h3>
+                <p>Building responsive and interactive web applications using modern technologies like HTML5, CSS3, and
+                    JavaScript.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3>Mobile Responsive</h3>
+                <p>Creating websites that look perfect on all devices - desktop, tablet, and mobile with optimal user
+                    experience.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <h3>UI/UX Design</h3>
+                <p>Designing beautiful and intuitive user interfaces that enhance user experience and engagement.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-bug"></i>
+                </div>
+                <h3>Bug Fixing & Support</h3>
+                <p>Debugging, testing, and providing ongoing support to ensure your projects run smoothly.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h3>Performance Optimization</h3>
+                <p>Optimizing code and assets to improve website speed and overall performance.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h3>Mentoring & Training</h3>
+                <p>Sharing knowledge and helping others learn programming and web development concepts.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Testimonials Section -->
+<!-- <section id="testimonials" class="testimonials">
+        <h2 class="section-title">What People Say</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <p class="testimonial-text">"Bibhash is an exceptional developer with great attention to detail. His
+                    work on our project was outstanding and he delivered on time."</p>
+                <div class="testimonial-author">
+                    <h4>Chiran Rawat</h4>
+                    <p>Project Manager</p>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <p class="testimonial-text">"Working with Bibhash was a pleasure. He's knowledgeable, communicative, and
+                    truly cares about the quality of his work."</p>
+                <div class="testimonial-author">
+                    <h4>Chetan</h4>
+                    <p>Business Owner</p>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <p class="testimonial-text">"Highly recommended! Bibhash has impressive technical skills and delivers
+                    excellent results. A true professional."</p>
+                <div class="testimonial-author">
+                    <h4>Nitesh</h4>
+                    <p>Tech Lead</p>
+                </div>
+            </div>
+        </div>
+    </section>  -->
+
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="testimonials">
+    <h2 class="section-title">What People Say</h2>
+
+    <div class="testimonials-grid" id="testimonialsGrid">
+
+        <!-- DEFAULT 1 -->
+        <div class="testimonial-card">
+            <div class="testimonial-header">
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+            <p class="testimonial-text">
+                "Bibhash is an exceptional developer with great attention to detail. 
+                His work on our project was outstanding and he delivered on time."
+            </p>
+            <div class="testimonial-author">
+                <h4>Chiran Rawat</h4>
+                <p>Project Manager</p>
+            </div>
+        </div>
+
+        <!-- DEFAULT 2 -->
+        <div class="testimonial-card">
+            <div class="testimonial-header">
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+            <p class="testimonial-text">
+                "Working with Bibhash was a pleasure. He's knowledgeable, communicative, 
+                and truly cares about the quality of his work."
+            </p>
+            <div class="testimonial-author">
+                <h4>Chetan</h4>
+                <p>Business Owner</p>
+            </div>
+        </div>
+
+        <!-- DEFAULT 3 -->
+        <div class="testimonial-card">
+            <div class="testimonial-header">
+                <div class="testimonial-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+            <p class="testimonial-text">
+                "Highly recommended! Bibhash has impressive technical skills and 
+                delivers excellent results. A true professional."
+            </p>
+            <div class="testimonial-author">
+                <h4>Nitesh</h4>
+                <p>Tech Lead</p>
+            </div>
+            
+        </div>
+<div id="feedbackList" class="feedback-list"></div>
+    </div>
+</section>
+
+
+<!-- Feedback Form -->
+<section class="feedback">
+    <h2 class="section-title">Leave Feedback</h2>
+
+    <div class="feedback-form">
+        <form id="feedbackForm">
+
+            <input type="text" name="name" id="username" placeholder="Your Name" required>
+            <input type="text" name="role" id="userrole" placeholder="Your Role" required>
+            <textarea name="feedback" id="userfeedback" placeholder="Write feedback..." required></textarea>
+
+            <label>Rating:</label>
+            <select name="rating" id="userrating" required>
+                <option value="5">★★★★★</option>
+                <option value="4">★★★★☆</option>
+                <option value="3">★★★☆☆</option>
+                <option value="2">★★☆☆☆</option>
+                <option value="1">★☆☆☆☆</option>
+            </select>
+
+            <button class="submit-btn" type="submit">Submit</button>
+        </form>
+    </div>
+
+    
+</section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Start Your Project?</h2>
+            <p>Let's work together to bring your ideas to life. I'm excited to help you create something amazing.
+                Whether you have a small project or a large-scale initiative, I'm here to help make it happen with
+                expertise and dedication.</p>
+            <a href="#contact" class="cta-button-large">Get In Touch Now</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2 class="section-title">Contact Me</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <h3>Phone</h3>
+                    <p>+91 8603500504</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>yadavbibhash304059@gmail.com</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Location</h3>
+                    <p>Janakpurdham, Nepal</p>
+                </div>
+            </div>
+            <form action="https://formspree.io/f/moqbyrga" method="post" class="contact-form">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="reset" class="reset-btn">Reset Form</button>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+
+        <div class="footer-content">
+
+            <h3 class="footer-title">Learning, Building & Growing 💻</h3>
+            <p class="footer-sub">
+                Computer Science student passionate about web development and real-world projects.
+                Actively looking for internships and opportunities to gain practical experience.
+
+            </p>
+
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/bibhash-yadav-12086032a?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                    target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Bibhash-yadav" target="_blank" title="GitHub"><i
+                        class="fab fa-github"></i></a>
+                <a href="https://x.com/YadavBibhash1" target="_blank" title="Twitter / X"><i
+                        class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100057226334759" target="_blank" title="Facebook"><i
+                        class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/bibhash.yadav.ab/" target="_blank" title="Instagram"><i
+                        class="fa-brands fa-instagram"></i></a>
+                <a href="https://wa.me/+918603500504" target="_blank" title="WhatsApp"><i
+                        class="fa-brands fa-whatsapp"></i></a>
+                <a href="mailto:yadavbibhash304059@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+
+            <button class="top-btn" onclick="scrollToTop()">
+                ↑ Back to Top
+            </button>
+
+            <p class="copyright">
+                © <span id="year"></span> Bibhash Yadav • Student Developer Portfolio
+            </p>
+
+        </div>
+    </footer>
+
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <script src="script.js"></script>
+</body>
+
+</html>
